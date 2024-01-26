@@ -1,5 +1,4 @@
 /**
- *
  * @param {success | error} type
  * @param {string} msg
  */
@@ -39,6 +38,22 @@ const login = async (email, password) => {
     showAlert("error", error.response.data.message);
   }
 };
+const logout = async () => {
+  try {
+    const res = await axios({
+      method: "GET",
+      url: "http://127.0.0.1:5555/api/v1/users/logout",
+    });
+    if (res.data.status === "success") {
+      location.reload(true);
+    }
+  } catch (error) {
+    showAlert("error", "حدث خطأ اثناء تسجيل الخروج , حاول مرة اخري!");
+  }
+};
+if (document.querySelector(".logout")) {
+  document.querySelector(".logout").addEventListener("click", logout);
+}
 if (document.querySelector(".form")) {
   document.querySelector(".form").addEventListener("submit", (e) => {
     e.preventDefault();

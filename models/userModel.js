@@ -19,6 +19,10 @@ const userSchema = mongoose.Schema({
     type: String,
     enum: ["prep", "sec"],
   },
+  group: {
+    type: Number,
+    default: 1,
+  },
   role: {
     type: String,
     enum: ["user", "admin", "super-admin"],

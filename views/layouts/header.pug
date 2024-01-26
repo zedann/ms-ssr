@@ -11,13 +11,20 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary(dir='rtl')
         li.nav-item
           a.nav-link(href='/tasks') &#x627;&#x644;&#x648;&#x627;&#x62C;&#x628;
         li.nav-item
-          a.nav-link(href='#') &#x627;&#x644;&#x623;&#x62D;&#x62F;&#x627;&#x62B; &#x627;&#x644;&#x642;&#x627;&#x62F;&#x645;&#x629;
+          a.nav-link(href='#') المواعيد
+        li.nav-item
+          a.nav-link(href='#') التواصل
       if user
         ul.navbar-nav.col-4
           li.nav-item
             a.nav-link.text-primary(href='#')=user.name.split(' ')[0]
+          if user.role == 'admin'
+            li.nav-item
+              a.nav-link.text-info(href='#') لوحة التحكم
           li.nav-item
-            a.nav-link.text-info(href='#') تسجيل الخروج
+            a.nav-link.text-danger.logout(href='#') تسجيل الخروج
+          
+          
       else 
         ul.navbar-nav.col-4
           li.nav-item
