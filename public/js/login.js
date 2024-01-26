@@ -1,3 +1,22 @@
+/**
+ *
+ * @param {success | error} type
+ * @param {string} msg
+ */
+const hideAlert = () => {
+  const el = document.querySelector("alert");
+  if (el) {
+    el.parentElement().removeChild(el);
+  }
+};
+const showAlert = (type, msg) => {
+  hideAlert();
+  if (type === "success") type = "primary";
+  else type = "danger";
+  const markup = `<div class="alert alert-${type}" role="alert">${msg}</div>`;
+  document.querySelector("nav").insertAdjacentHTML("afterbegin", markup);
+  window.setTimeout(hideAlert, 5000);
+};
 const login = async (email, password) => {
   console.log(email, password);
   try {
@@ -9,9 +28,14 @@ const login = async (email, password) => {
         password,
       },
     });
-    console.log(res);
+    if (res.data.status === "success") {
+      showAlert(res.data.status, "تم تسجيل الدخول بنجاح");
+      window.setTimeout(() => {
+        location.assign("/");
+      }, 1500);
+    }
   } catch (error) {
-    console.log(error);
+    alert(error.response.data.message);
   }
 };
 if (document.querySelector(".form")) {

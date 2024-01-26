@@ -15,11 +15,20 @@ html(lang="en" dir='rtl')
         include ./layouts/header
 
         block content 
-            .container.mt-5 
-                h1.text-center مرحبا بكم 😊
-                h1.text-center مستر محمد الشربيني 
-                p.text-center
-                    a(href='#') طريقة استخدام المنصة؟🤔
+
+            .container.mt-3 
+                if user 
+                    h1.text-center مرحبا #{user.name}
+                    .card.p-2.bg-secondary
+                        p.text-center.text-light.fs-3 المطلوب الاسبوع ده؟😥
+                        p.text-center.text-light.fs-5 ⏺حل في الكتاب من الصفحة 3-5 (15-2 بحد اقصي)
+                        
+                        
+                else 
+                    h1.text-center مرحبا بكم 😊
+                    h1.text-center مستر محمد الشربيني 
+                    p.text-center
+                        a(href='#') طريقة استخدام المنصة؟🤔
 
 
         include ./layouts/footer
@@ -27,3 +36,4 @@ html(lang="en" dir='rtl')
         script(src='/js/axios.min.js' )
         script(src='/js/bootstrap.min.js')
         script(src="/js/login.js") 
+        
