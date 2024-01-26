@@ -4,17 +4,18 @@
  * @param {string} msg
  */
 const hideAlert = () => {
-  const el = document.querySelector("alert");
+  const el = document.querySelector(".alert");
+  console.log(el);
   if (el) {
-    el.parentElement().removeChild(el);
+    el.parentElement.removeChild(el);
   }
 };
 const showAlert = (type, msg) => {
   hideAlert();
   if (type === "success") type = "primary";
   else type = "danger";
-  const markup = `<div class="alert alert-${type}" role="alert">${msg}</div>`;
-  document.querySelector("nav").insertAdjacentHTML("afterbegin", markup);
+  const markup = `<div class="alert alert-${type} text-center" role="alert">${msg}</div>`;
+  document.querySelector("nav").insertAdjacentHTML("afterend", markup);
   window.setTimeout(hideAlert, 5000);
 };
 const login = async (email, password) => {
@@ -35,7 +36,7 @@ const login = async (email, password) => {
       }, 1500);
     }
   } catch (error) {
-    alert(error.response.data.message);
+    showAlert("error", error.response.data.message);
   }
 };
 if (document.querySelector(".form")) {
