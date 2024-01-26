@@ -1,0 +1,26 @@
+extends ../base
+
+block content
+    .container.main
+        main.login-form.card.p-5.mt-2
+            h2.text-danger.ma-bt-lg تسجيل طالب جديد
+            form.form
+                .form-group
+                    label.form__label(for='name') الاسم
+                    input#name.form__input.form-control(type='text' placeholder='اسمك الكامل' required='')
+                .form-group
+                    label.form__label(for='email') عنوان البريد الإلكتروني
+                    input#email.form__input.form-control(type='email' placeholder='you@example.com' required='')
+                .form-group
+                    label.form__label(for='password') كلمة المرور
+                    input#password.form__input.form-control(type='password' placeholder='••••••••' required='' minlength='8')
+                .form-group
+                    label.form__label(for='phone') رقم الهاتف
+                    input#phone.form__input.form-control(type='text' placeholder='رقم الهاتف' required='')
+                .form-group
+                    label.form__label(for='academic-grade') الصف الدراسي
+                    select#academic-grade.form__input.form-control
+                        option(value='secondary') ثانوي
+                        option(value='preparatory') اعدادي
+                .form-group
+                    button.btn.btn-danger.btn--green.btn-lg.mt-3(type='submit') تسجيل

@@ -1,0 +1,27 @@
+* {
+  font-family: "Tajawal", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.login-form {
+  text-align: center;
+}
+
+.heading-secondary {
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.form__label {
+  color: #6c757d;
+}

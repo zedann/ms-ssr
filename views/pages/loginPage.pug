@@ -1,0 +1,15 @@
+extends ../base
+
+block content
+    .container.main
+        main.login-form.card.p-5.mt-5
+            h2.heading-secondary.ma-bt-lg تسجيل الدخول🔐
+            form.form
+                .form-group
+                    label.form__label(for='email') عنوان البريد الإلكتروني
+                    input#email.form__input.form-control(type='email' placeholder='zedan@example.com' required='')
+                .form-group.ma-bt-md
+                    label.form__label(for='password') كلمة المرور
+                    input#password.form__input.form-control(type='password' placeholder='••••••••' required='' minlength='8')
+                .form-group
+                    button.btn.btn-primary.btn--green.btn-lg.mt-3(type='submit') تسجيل الدخول
