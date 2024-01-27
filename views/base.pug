@@ -19,10 +19,24 @@ html(lang="en" dir='rtl')
             .container.mt-3 
                 if user 
                     h1.text-center مرحبا #{user.name}
-                    .card.p-2.bg-secondary
+                    .card.p-2.bg-secondary.my-2
                         p.text-center.text-light.fs-3 المطلوب الاسبوع ده؟😥
                         p.text-center.text-light.fs-5 ⏺حل في الكتاب من الصفحة 3-5 (15-2 بحد اقصي)
-                        
+                    if appointment
+                        .card.p-2.bg-secondary.my-2
+                            p.text-center.text-light.fs-3 معادك
+                            p.text-center.text-light.fs-5=`ايام ${appointment.days.join(' , ')}` 
+                            p.text-center.text-light.fs-5=`الساعة ${appointment.date}`
+                    .card.p-2.bg-secondary.my-2
+                        p.text-center.text-light.fs-3 الاحداث القادمة
+                        ul.list-group
+                            li.list-group-item.text-center الحدث الاول
+                            li.list-group-item.text-center الحدث الثاني
+                            li.list-group-item.text-center الحدث الثالث
+                            
+
+    
+                    
                         
                 else 
                     h1.text-center مرحبا بكم 😊

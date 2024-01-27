@@ -1,4 +1,18 @@
 extends ../base
 
 block content 
-    h1 Tasks
+    .container.my-5
+        .row.text-center  
+            if tasks.length===0
+                .col-md-6.my-1
+                    .card
+                        p.card-text.fs-5 لا يوجد محتوي متاح لك حاليا
+            else 
+                each task in tasks 
+                    .col-md-6.my-1
+                        .card
+                            p.fs-2=task.title
+                            p.fs-4=task.content
+                            p.fs-5=`اخر معاد للتسليم ${new Date(task.deadline).getDate()}`
+                            a.btn.btn-primary تسلم الواجب
+

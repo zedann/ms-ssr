@@ -7,6 +7,7 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public"))); // serve static files htmls imgs ...
 const viewRouter = require("./routes/viewRoutes");
 const appointmentRouter = require("./routes/appointmentRoutes");
+const taskRouter = require("./routes/taskRoutes");
 const globalErrorHandler = require("./controllers/errorController");
 const morgan = require("morgan");
 const rateLimit = require("express-rate-limit");
@@ -45,5 +46,6 @@ app.use("/", viewRouter);
 // api Routes
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/appointments", appointmentRouter);
+app.use("/api/v1/tasks", taskRouter);
 app.use(globalErrorHandler);
 module.exports = app;

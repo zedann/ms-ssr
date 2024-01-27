@@ -5,12 +5,12 @@
   padding: 0;
 }
 body {
-  height: 100vh;
+  /* height: 100vh; */
 }
 footer {
-  position: absolute;
+  /* position: absolute;
   bottom: 0;
-  width: 100%;
+  width: 100%; */
 }
 
 .login-form {

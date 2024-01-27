@@ -17,7 +17,7 @@ const userSchema = mongoose.Schema({
   },
   class: {
     type: String,
-    enum: ["prep", "sec"],
+    enum: ["prep1", "prep2", "prep3", "sec1", "sec2", "sec3"],
   },
   group: {
     type: Number,

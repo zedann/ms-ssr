@@ -1,0 +1,16 @@
+extends ../base 
+
+block content 
+    .container.mt-3 
+        .row 
+            each appointment in appointments 
+                .col-md-6.my-1
+                    - const bgDark = (user.group === appointment.group &&user.class === appointment.class); 
+                    .card.p-2(class=bgDark ? 'bg-dark text-light' : '')
+                            p.fs-3=`مجموعة ${appointment.group}  | ${appointment.class==='sec1'? 'الصف الاول الثانوي' : appointment.class==='sec2'?'الصف الثاني الثانوي':appointment.class==='sec3'?'الصف الثالث الثانوي':appointment.class==='prep1'? 'الصف الاول الاعدادي':appointment.class==='prep2'?'الصف الثاني الاعدادي':appointment.class==='prep3'?'الصف الثالث الاعدادي' : ''}`
+                            p.card-text.fs-4=appointment.days.join(' , ')
+                            p.text-center.fs-5=`الساعة ${appointment.date}` 
+            -if (!appointments)
+                .card-md-6
+                    p.card-text.fs-5 لا يوجد محتوي متاح لك حاليا
+

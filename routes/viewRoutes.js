@@ -8,5 +8,9 @@ router.get("/register", authController.isLoggedIn, viewController.register);
 
 router.get("/", authController.isLoggedIn, viewController.index);
 router.get("/tasks", authController.protect, viewController.task);
-
+router.get(
+  "/appointments/",
+  authController.protect,
+  viewController.getAppointments
+);
 module.exports = router;
